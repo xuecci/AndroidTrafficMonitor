@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.dreamteam.trafficmonitor"
+	android:versionCode="1"
+	android:versionName="0.1.0" >
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" >
+	</uses-permission>
+	<supports-screens
+		android:anyDensity="true"
+		android:largeScreens="true"
+		android:normalScreens="true"
+		android:smallScreens="true" />
+	<uses-sdk
+		android:minSdkVersion="10"
+		android:targetSdkVersion="17" />
+	<application
+		android:allowBackup="true"
+		android:icon="@drawable/logo"
+		android:label="@string/app_name"
+		android:theme="@style/AppTheme" >
+		<activity
+			android:name="com.dreamteam.trafficmonitor.WelcomeActivity"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.dreamteam.trafficmonitor.MainActivity" />
+		<activity android:name="com.dreamteam.trafficmonitor.control.TrafficControl" />
+		<activity android:name="com.dreamteam.trafficmonitor.TrafficDisplay" >
+		</activity>
+		<activity android:name="com.dreamteam.trafficmonitor.TrafficStatistics" >
+		</activity>
+		<service android:name="com.dreamteam.trafficmonitor.service.TrafficService" >
+			<intent-filter>
+				<action android:name="com.dream.trafficmonitor.service.TrafficService" />
+			</intent-filter>
+		</service>
+		<activity
+			android:name="com.dreamteam.trafficmonitor.Setting"
+			android:icon="@drawable/setting"
+			android:label="@string/title_activity_setting"
+			android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+		</activity>
+		<activity
+			android:name="com.dreamteam.trafficmonitor.IntelReco"
+			android:label="@string/title_activity_intel_reco" >
+		</activity>
+		<receiver
+			android:name="BootBroadcast"
+			android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" >
+				</action>
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.dreamteam.trafficmonitor.control.PackageBroadcast" >
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_ADDED" />
+				<action android:name="android.intent.action.PACKAGE_REMOVED" />
+				<data android:scheme="package" />
+			</intent-filter>
+		</receiver>
+	</application>
+</manifest>

@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RelativeLayout"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal" >
+	<ImageView
+		android:id="@+id/ItemImage"
+		android:layout_width="40dip"
+		android:layout_height="40dip"
+		android:layout_gravity="center_vertical" />
+	<TableLayout
+		android:layout_width="fill_parent"
+		android:layout_height="60dip"
+		android:stretchColumns="1" >
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="20dip" >
+			<TextView
+				android:id="@+id/Lable"
+				android:layout_width="wrap_content"
+				android:layout_height="20dip"
+				android:layout_span="2"
+				android:textSize="12sp"
+				android:textStyle="bold" />
+		</TableRow>
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="20dip" >
+			<TextView
+				android:id="@+id/gprsText01"
+				android:layout_width="wrap_content"
+				android:layout_height="20dip"
+				android:text="数据"
+				android:textSize="12sp" />
+			<TextView
+				android:id="@+id/gprs"
+				android:layout_width="wrap_content"
+				android:gravity="left" />
+		</TableRow>
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="20dip" >
+			<TextView
+				android:id="@+id/WLANText02"
+				android:layout_width="wrap_content"
+				android:layout_height="20dip"
+				android:text="WLAN"
+				android:textSize="12sp" />
+			<TextView
+				android:id="@+id/wlan"
+				android:layout_width="wrap_content"
+				android:layout_margin="1dip"
+				android:gravity="left" />
+		</TableRow>
+	</TableLayout>
+</LinearLayout>
